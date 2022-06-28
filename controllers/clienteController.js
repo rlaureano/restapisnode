@@ -1,7 +1,7 @@
 const Clientes = require('../models/Clientes')
 
 // Agrega un nuevo cliente
-exports.nuevoCliente = async(req, res) => {
+exports.nuevoCliente = async(req, res, next) => {
     
     const cliente = new Clientes(req.body)
 
@@ -11,7 +11,7 @@ exports.nuevoCliente = async(req, res) => {
         res.json({mensaje: 'Se agregó un nuevo cliente'})
 
     } catch (err) {
-        console.log(error)
+        console.log(err)
         next()
     }
 }
