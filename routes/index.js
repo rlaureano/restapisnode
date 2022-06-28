@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const clienteController = require('../controllers/clienteController')
 const productosController = require('../controllers/productosController')
+const pedidosController = require('../controllers/pedidosController')
 
 module.exports = function () {
 
@@ -40,8 +41,11 @@ module.exports = function () {
         productosController.actualizarProducto
     )
 
-    // Eliinar un producto por su ID
+    // Eliminar un producto por su ID
     router.delete('/productos/:idProducto', productosController.eliminarProducto)
+
+    /*** PREDIDOS ***/
+    router.post('/pedidos', pedidosController.nuevoPedido)
 
     return router
 }

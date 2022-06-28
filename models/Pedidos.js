@@ -6,7 +6,7 @@ const pedidosSchema = new Schema({
         type: Schema.ObjectId,
         ref: 'Clientes'
     },
-    productos: [{
+    pedido: [{
         producto: {
             type: Schema.ObjectId,
             ref: 'Productos'
@@ -18,4 +18,4 @@ const pedidosSchema = new Schema({
     }
 })
 
-exports.module = mongoose.model('Pedidos', pedidosSchema)
+module.exports = mongoose.model('Pedidos', pedidosSchema)
