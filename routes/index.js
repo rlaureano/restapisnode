@@ -45,7 +45,21 @@ module.exports = function () {
     router.delete('/productos/:idProducto', productosController.eliminarProducto)
 
     /*** PREDIDOS ***/
+
+    // Agrega nuevos pedidos
     router.post('/pedidos', pedidosController.nuevoPedido)
 
+    // Mostrar todos los pedidos
+    router.get('/pedidos', pedidosController.mostrarPedidos)
+
+    // Mustra pedido por su id
+    router.get('/pedidos/:idPedido', pedidosController.mostrarPedido)
+
+    // Actualizar pedidos
+    router.put('/pedidos/:idPedido', pedidosController.actualizarPedido)
+
+    // Elimiar un pedido por el ID
+    router.delete('/pedidos/:idPedido', pedidosController.eliminarPedido)
+    
     return router
 }
