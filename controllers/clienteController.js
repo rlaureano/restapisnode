@@ -57,7 +57,7 @@ exports.actualizarCliente = async (req, res, next) => {
         res.json(cliente)
 
     } catch(err){
-        console.log(err);
+        res.send(err);
         next()
     } 
 
