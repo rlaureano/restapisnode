@@ -110,7 +110,7 @@ exports.eliminarProducto = async (req, res, next) => {
         await Productos.findByIdAndDelete({_id: req.params.idProducto})
         res.json({mensaje: 'El producto de ha eliminado'})
     } catch (err) {
-        console.log(err)
+        res.send(err)
         next()
     }
 }
